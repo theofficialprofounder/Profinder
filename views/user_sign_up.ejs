@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>PROFINDER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+	<link rel="icon" href="include the logo here" type="image/icon type">
+	<!-- Font Icon -->
+    <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/css/sign.css">
+	
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form method="POST" action="/users/create">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input required = "true" name = "name" type="name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input required = "true" name = "email" type="email" placeholder="Email Address">
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input required = "true" name= "password" type="password" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input required = "true" name= "confirmPassword" type="password" placeholder="Re-type Password">
+                            </div>
+                            <div class="form-group">
+                                <input required = "true" type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <button id="dummy"  name="signup" id="signup" class="form-submit" value="Register"> REGISTER </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <h1>
+                            Hello, you!
+                            <p>Welcome to THE PROFINDER!</p>
+                            
+                            <i>We're very EXCITED to have you here!</i>
+                        </h1>
+                        <figure><img src="/images/signup-image.jpg" alt="sing up image"></figure>
+                        <a href="/users/sign-in" class="signup-image-link">I am already member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            <% if(flash.success && flash.success.length > 0) { %>
+                    new Noty({
+                        theme: 'nest',
+                        text: "<%= flash.success %>",
+                        type: 'info',
+                        layout: 'topRight',
+                        timeout: 3000
+                    }).show();
+            <% } %>
+    
+            <% if(flash.error && flash.error.length > 0) { %>
+                    new Noty({
+                        theme: 'nest',
+                        text: "<%= flash.error %>",
+                        type: 'error',
+                        layout: 'topRight',
+                        timeout: 3000
+                    }).show();
+            <% } %>
+        </script>
+		<script src="vendor/jquery/jquery.min.js"></script>
+        <script>
+			let dummybtn = $('#dummy');
+			dummybtn.click(function(e){
+				e.preventDefault();
+				let orgbtn = $('#org');
+				orgbtn.click();
+			});
+        </script>
+        <script src="assests/vendor/jquery/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/comments.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>PROFINDER | HOME</title>
+</head>
+
+<body>
+  
+
+  <!-- navbar -->
+  <%- include('header'); %>
+
+  <!-- <% if(flash.success && flash.success.length > 0){ %>
+      <h5>
+        <%= flash.success %>
+      </h5>
+  <% } %> -->
+  
+   <!-- SEARCH BAR -->
+  <form id="search-form" action="/posts/" method="get">
+  <div class="container mt-4">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-9">
+        <div class="card p-4 mt-3">
+          <h3 class="heading text-center">Hello, Search for your tech-stack!</h3>
+          <div class="d-flex justify-content-center px-5">
+            <div class="search"> <input type="text" id="search-input" class="search-input" value="<%=searchContent%>" placeholder="Search..." name="tech">
+              <button id="search-icon" class="search-icon" style="background-color: black">
+                <i class="fa fa-search"></i>
+              </butto >
+            </div>
+          </div>
+          <div class="row g-1 px-4">
+            <!-- <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img src="https://i.imgur.com/Mb8kaPV.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Account</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img src="https://i.imgur.com/ueLEPGq.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Payments</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img src="https://i.imgur.com/tmqv0Eq.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Delivery</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img src="https://i.imgur.com/D0Sm15i.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Product</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img src="https://i.imgur.com/Z7BJ8Po.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Return</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img src="https://i.imgur.com/YLsQrn3.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Guarantee</span> </div>
+                            </div>
+                        </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-light pt-5" style="background-color: #e7f0fe !important;">
+        <div class="mx-auto order-0">
+          <ul>
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search for a tech-stack" aria-label="Search">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+              </form>
+        </ul>
+        </div>
+      </nav> -->
+  
+  <!-- main div -->
+  <div class="container pt-5">
+    <!-- <form action="/posts/create" method="post">
+        <textarea name="content" placeholder="Type here.." id="" cols="30" rows="3"></textarea>
+        <input type="text" name="skills" placeholder="Tech req..">
+        <button>Submit</button>
+    </form> -->
+
+    <% if(searchContent.length==0) {%>
+    <div class="card text-white bg-dark mb-3 pb-3">
+      <div class="card-header">
+        <h2>Post a Project!
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookshelf"
+            viewBox="0 0 16 16">
+            <path
+              d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z" />
+          </svg>
+        </h2>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">
+          <form action="/posts/create" method="post">
+            <!-- Include title here -->
+            <div class="input-group pb-2">
+              <input type="text" name="title" class="form-control" placeholder="What do you call your project?">
+            </div>
+            <!-- title -->
+            <div class="input-group pb-2">
+              <textarea name="content" cols="30" rows="3" class="form-control"
+                placeholder="Describe your project workflow"></textarea>
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Requirements</span>
+              </div>
+              <input type="text" name="skills" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+            </div>
+        </h5>
+        <p class="card-text">
+        </p>
+        <button class="btn btn-light">Submit</button>
+        </form>
+      </div>
+    </div>
+    <% } %>
+
+    <%- include('display_comments');%>
+     
+    
+  </div>
+  <script>
+    <% if(flash.success && flash.success.length > 0) { %>
+          new Noty({
+              theme: 'nest',
+              text: "<%= flash.success %>",
+              type: 'info',
+              layout: 'topRight',
+              timeout: 3000
+          }).show();
+    <% } %>
+
+    <% if(flash.error && flash.error.length > 0) { %>
+          new Noty({
+              theme: 'nest',
+              text: "<%= flash.error %>",
+              type: 'error',
+              layout: 'topRight',
+              timeout: 3000
+          }).show();
+    <% } %>
+
+    <% if(flash.info && flash.info.length > 0) { %>
+          new Noty({
+              theme: 'nest',
+              text: "<%= flash.info %>",
+              type: 'success',
+              layout: 'topRight',
+              timeout: 3000
+          }).show();
+    <% } %>
+  </script>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>

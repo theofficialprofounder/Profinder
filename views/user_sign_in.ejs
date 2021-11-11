@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>PROFINDER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+	<link rel="icon" href="include the logo here" type="image/icon type">
+	
+	<!-- <link rel="stylesheet" href="/css/style.css"> -->
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/css/sign.css">
+
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"> -->
+	
+	
+</head>
+	<body>
+		
+		<div class="main">
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="/images/signin-image.jpg" alt="sign up image"></figure>
+                        <a href="/users/sign-up" class="signup-image-link">Create an account</a>
+						<a href="/forgot-password" class="signup-image-link">Forgot Password?</a>
+                    </div>
+                    <div class="signin-form">
+                        <h2 class="form-title">SIGN IN</h2>
+                        <form method="POST" action="/users/create-session">
+                            <div class="form-group">
+                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input name = "email" type="text" placeholder="Email Address">
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input name = "password" type="password" placeholder="Password">
+                            </div>
+                            <!-- <div class="form-group">
+                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                            </div> -->
+                            <div class="form-group form-button">
+                                <button type="submit" name="signin" id="signin" class="form-submit" value="Log in"> LOGIN </button>
+                            </div>
+                        </form>
+						
+                        <div class="social-login">
+                            <span class="social-label" style="text-align: center">
+                                <h1>
+                                    Hello, you!
+                                    <p>Welcome to THE PROFINDER.</p>
+                                </h1>
+                            </span>
+                            <!-- <ul class="socials">
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <script>
+        <% if(flash.success && flash.success.length > 0) { %>
+                new Noty({
+                    theme: 'nest',
+                    text: "<%= flash.success %>",
+                    type: 'info',
+                    layout: 'topRight',
+                    timeout: 3000
+                }).show();
+        <% } %>
+
+        <% if(flash.error && flash.error.length > 0) { %>
+                new Noty({
+                    theme: 'nest',
+                    text: "<%= flash.error %>",
+                    type: 'error',
+                    layout: 'topRight',
+                    timeout: 3000
+                }).show();
+        <% } %>
+    </script>
+	<script src="assests/vendor/jquery/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
