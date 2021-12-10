@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const url = "mongodb+srv://sreelaya:mongodbpassword@profinderdb.itoa4.mongodb.net/Profound?retryWrites=true&w=majority"
+const url = ""
 mongoose.connect(url);
 const db = mongoose.connection;
 db.on('error',console.error.bind(console,'error connecting to db'));
