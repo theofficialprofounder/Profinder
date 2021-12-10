@@ -34,7 +34,7 @@
 ## 📦 Directory Structure
 
 <a id="fold"></a>
-### Folders
+## Folders
 
  - assests
  - config
@@ -45,52 +45,52 @@
  - views
 
 <a id="eachFold"></a>
-### Each Folder
+## Each Folder
 
- ## Assets:
+ ### Assets:
  
       This folder contains all the CSS, Fonts, JS folders that contain files to enhance the frontend part of the website.
       
- ## Config:
+ ### Config:
  
       This contains all the configuration folders of mongoose, mailer, passportJS, flash messages.
       
- ## Controllers:
+ ### Controllers:
  
       This folder contains the files that contain the functions/controllers that need to be called for each route.
     
- ## Mailers:
+ ### Mailers:
  
       This folder contains the file that contains the controllers of the email authentication etc. 
       
- ## Models:
+ ### Models:
  
       This folder contains the files that contain the models of comments, users, posts.
  
- ## Routes:
+ ### Routes:
  
       This folder contains all the routes.
  
- ## Views:
+ ### Views:
  
       This folder contains all the expressJS files. 
 
 <a id="setup"></a>
-### Installation
+## Installation
 
-  ## Step 1:
+  ### Step 1:
   
   Use `git clone https://https://github.com/theofficialprofounder` on your terminal to clone this repository in your local computer.
   
-  ## Step 2:
+  ### Step 2:
     
   Go to the local cloned repo and use `npm install` to install all the packages used.  
   
-  ## Step 3:
+  ### Step 3:
   
   We use MongoDB as our Database and the project needs you to have that installed in your local computer. You would need to add the URL of your local mongodb connection to connect to the database. The file would be inside `config/mongoose.js`
   
-  ## Step 4:
+  ### Step 4:
   
   Once your MongoDB is setup and you have added the url in the `config/mongoose.js` file, you can use `nodemon index.js` to run the project. We use `nodemon` which is why you would not need to restart the server everytime you make any change. Once you save the file you are making changes in, the server restarts automatically.
 
@@ -100,9 +100,8 @@
 Feel free to [open an issue](https://github.com/theofficialprofounder/Profinder/issues) on GitHub if you find any bug.
 
 <a id="feature-request"></a>
-
 ## ⭐ Feature Request
 
-- We are looking to work to make this project better.
+- We are looking for people to join us and contribute so we can make this project better.
 - Feel free to [Open an issue](https://github.com/theofficialprofounder/Profinder/issues) on GitHub to request any additional features that you think would be nice. 
-- Connect with us on mail! [Sreelaya](mailto:sreelayavuyyuru@gmail.com) and [Aman](mailto:aman.amanjolly@gmail.com). We'd love ❤️️ to hear any new ideas that would make our initiative better.
+- Connect with us on mail! [Sreelaya](mailto:sreelayavuyyuru@gmail.com) and [Aman](mailto:aman.amanjolly@gmail.com). We'd love ❤️️ to hear any new ideas that would give our initiative a bigger reach.
